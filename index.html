@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechShop — Онлайн магазин техники</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== ШАПКА ===== -->
+  <header class="header">
+    <button class="burger-btn" id="burger-btn" aria-label="Меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="#" class="logo">Tech<span>Shop</span></a>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Поиск товаров..."
+        autocomplete="off"
+      />
+    </div>
+
+    <button class="cart-btn" onclick="toggleCart()">
+      <span class="cart-icon">🛒</span>
+      <span>Корзина</span>
+      <span id="cart-badge">0</span>
+    </button>
+  </header>
+
+  <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+  <div class="main-layout">
+
+    <!-- Сайдбар с категориями -->
+    <aside class="sidebar" id="sidebar">
+      <p class="sidebar-title">Категории</p>
+      <nav id="categories-list">
+        <!-- Категории вставятся через JS -->
+      </nav>
+    </aside>
+
+    <!-- Товары -->
+    <main class="content">
+      <div class="content-header">
+        <span class="products-count" id="products-count">Загрузка...</span>
+        <select class="sort-select" id="sort-select">
+          <option value="default">По умолчанию</option>
+          <option value="price-asc">Сначала дешевле</option>
+          <option value="price-desc">Сначала дороже</option>
+          <option value="rating">По рейтингу</option>
+          <option value="popular">По популярности</option>
+        </select>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <!-- Карточки товаров вставятся через JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== КОРЗИНА ===== -->
+  <div class="overlay" id="overlay"></div>
+
+  <div class="cart-modal" id="cart-modal">
+    <div class="cart-header">
+      <h2>🛒 Корзина</h2>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cart-body">
+      <!-- Товары в корзине вставятся через JS -->
+    </div>
+    <div id="cart-footer">
+      <!-- Итоги вставятся через JS -->
+    </div>
+  </div>
+
+  <!-- ===== КНОПКА НАВЕРХ ===== -->
+  <button class="to-top-btn" id="to-top" title="Наверх">↑</button>
+
+  <!-- ===== ПОДВАЛ ===== -->
+  <footer class="footer">
+    <p>© 2024 TechShop — Лучшая техника по лучшим ценам</p>
+  </footer>
+
+  <!-- Сначала данные, потом логика, потом инициализация -->
+  <script src="data/products.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
