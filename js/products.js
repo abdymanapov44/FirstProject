@@ -7,7 +7,7 @@ let searchQuery = '';
 
 // Форматируем цену - добавляем пробелы как разделители тысяч и знак рубля
 function formatPrice(price) {
-  return price.toLocaleString('ru-RU') + ' ₽';
+  return price.toLocaleString('ru-RU') + ' сом';
 }
 
 // Рисуем звёздочки рейтинга
